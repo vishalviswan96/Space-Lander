@@ -11,7 +11,7 @@ public class LevelGenerator : MonoBehaviour
     /// 
     /// </summary>
 
-    private const float PLAYER_DISTANCE_SPAWN_PLATFORM = 30f;
+    private const float PLAYER_DISTANCE_SPAWN_PLATFORM = 100f;
 
     [SerializeField] private Transform platform1;
     [SerializeField] private Transform coin;

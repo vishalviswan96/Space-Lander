@@ -975,9 +975,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 1
+  m_LinearDrag: 2
+  m_AngularDrag: 0.1
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -1043,8 +1043,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387134360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.77, y: -3.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.78, y: -2.26, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 479529488}
   - {fileID: 8038336895784870605}
@@ -1066,8 +1066,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0946cbc95becf5041b93d1dfd0e5ce7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force_Amount: 50
-  rotate_Amount: 10
+  force_Amount: 20
+  rotate_Amount: 40
   transition_Time: 2
   rocket_Particle: {fileID: 7880574235744478415}
   win_Particle: {fileID: 7880299127258302533}
@@ -1702,7 +1702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0306d796c6ebf4d8d72785bea5fca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  required_HoldTime: 2
+  required_HoldTime: 3
   fill_Image: {fileID: 366411307}
   button_Active: 0
 --- !u!1001 &5753493042022637346
@@ -1718,11 +1718,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3748412492052529757, guid: f7387d3b4db2ae346809c9bd97154c00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.78
+      value: -5.76
       objectReference: {fileID: 0}
     - target: {fileID: 3748412492052529757, guid: f7387d3b4db2ae346809c9bd97154c00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.5379
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 3748412492052529757, guid: f7387d3b4db2ae346809c9bd97154c00, type: 3}
       propertyPath: m_LocalPosition.z

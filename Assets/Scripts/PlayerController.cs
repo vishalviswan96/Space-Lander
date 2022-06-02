@@ -13,9 +13,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement Controls")]
 
-    [SerializeField] private float force_Amount = 1f;
-    [SerializeField] private float rotate_Amount = 1f;
-    [SerializeField] private float transition_Time = 1f;
+    [SerializeField] private float force_Amount;
+    [SerializeField] private float rotate_Amount;
+    [SerializeField] private float transition_Time;
 
     [Header("Particle Effects")]
 
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Ground Check")]
 
-    [SerializeField] float check_Radius = 0.3f;
+    [SerializeField] float check_Radius = 1f;
     public LayerMask ground_Layer;
     public Transform ground_Check;
     bool is_Ground;
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
+   
     // Update is called once per frame
     void Update()
     {
@@ -94,7 +94,8 @@ public class PlayerController : MonoBehaviour
 
     void HandleMovement()
     {
-        if(Mathf.Abs(xInput) > 0)
+
+        if (Mathf.Abs(xInput) > 0)
         {
             my_Body.AddRelativeForce(Vector3.up * force_Amount);
             rocket_Particle.Play();
@@ -107,13 +108,14 @@ public class PlayerController : MonoBehaviour
         if (player_state != State.ALIVE)
             return;
         col = target;
+
         is_Ground = Physics2D.OverlapCircle(ground_Check.position, check_Radius, ground_Layer);
 
         if (is_Ground)
         {
             Debug.Log(target.relativeVelocity.magnitude);
             // Hard hit on platform leading to explosion
-            if (target.relativeVelocity.magnitude > 8)
+            if (target.relativeVelocity.magnitude > 10)
             {
                 Debug.Log(target.relativeVelocity.magnitude);
                 sr.enabled = false;
@@ -131,13 +133,13 @@ public class PlayerController : MonoBehaviour
                 AudioManager.instance.PlayAudio(0);
             }
         }
-        
+
     }
 
     void CheckStatus()
     {
         sr.enabled = true;
-        transform.position = new Vector3(col.transform.position.x, col.transform.position.y + 1.15f);
+        transform.position = new Vector3(col.transform.position.x, col.transform.position.y + 0.5f);
         transform.rotation = Quaternion.identity;
         my_Body.velocity = Vector2.zero;
         button_Script.ResetButton();
